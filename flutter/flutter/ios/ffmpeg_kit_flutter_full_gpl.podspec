@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = 'ffmpeg_kit_flutter'
+  s.name             = 'ffmpeg_kit_flutter_full_gpl'
   s.version          = '6.0.3'
   s.summary          = 'FFmpeg Kit for Flutter'
   s.description      = 'A Flutter plugin for running FFmpeg and FFprobe commands.'
@@ -19,6 +19,11 @@ Pod::Spec.new do |s|
 
   s.dependency          'Flutter'
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+
+  ss.source_files         = 'Classes/**/*'
+  ss.public_header_files  = 'Classes/**/*.h'
+  ss.dependency 'ffmpeg-kit-ios-full-gpl', "6.0"
+  ss.ios.deployment_target = '12.1'
 
   s.subspec 'min' do |ss|
     ss.source_files         = 'Classes/**/*'
